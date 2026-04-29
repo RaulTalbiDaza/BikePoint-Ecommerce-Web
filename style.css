@@ -75,12 +75,15 @@ header {
 }
 
 .logo {
-    font-family: var(--font-title);
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--color-black);
-    letter-spacing: -1px;
-    font-style: italic;
+    height: 45px;
+    max-width: 200px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 /* Buscador */
