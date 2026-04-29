@@ -357,8 +357,10 @@ select {
 .product-image {
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 1rem; /* Padding added to give the bike some breathing room inside the box */
     transition: transform 0.5s ease;
+    background-color: #fff; /* Ensure white background if transparent */
 }
 
 .product-card:hover .product-image {
@@ -698,7 +700,8 @@ footer {
 .modal-image {
     width: 50%;
     border-radius: 12px;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 1rem;
     max-height: 400px;
 }
 
