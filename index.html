@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikePoint - Rendimiento y Aventura</title>
+    <meta name="description" content="BikePoint es una tienda de ciclismo moderna enfocada en rendimiento, velocidad y aventura. Diseñada para ciclistas urbanos y de montaña.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Montserrat para títulos, Roboto para texto -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Iconos para UI (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Banner superior -->
+    <div class="top-banner">
+        <i class="fa-solid fa-truck-fast"></i> Envío rápido en 24h a toda España
+    </div>
+
+    <!-- Encabezado con navegación y opciones de usuario -->
+    <header>
+        <div class="header-container">
+            <div class="logo">BikePoint</div>
+            
+            <!-- Buscador -->
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Buscar bicicletas..." onkeyup="searchProducts()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <!-- Menú hamburguesa (móvil) -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav id="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#" onclick="renderProducts('todas'); toggleMenu();">Todas</a></li>
+                    <li><a href="#" onclick="renderProducts('montaña'); toggleMenu();">Montaña</a></li>
+                    <li><a href="#" onclick="renderProducts('ruta'); toggleMenu();">Ruta</a></li>
+                    <li><a href="#" onclick="renderProducts('urbana'); toggleMenu();">Urbana</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-actions">
+                <div id="session-info">
+                    <button class="btn-outline" onclick="login()">Iniciar Sesión</button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()" id="cart-icon-container">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Domina cada ruta con BikePoint</h1>
+            <p>Bicicletas de alto rendimiento para ciclistas urbanos y de montaña.</p>
+            <button class="btn-primary" onclick="scrollToProducts()">Ver tienda</button>
+        </div>
+    </section>
+
+    <main>
+        <div class="section-title-container" id="productos-section">
+            <h2 class="section-title">Nuestras Bicicletas</h2>
+            <!-- Controles para ordenar productos -->
+            <div class="controls">
+                <div class="sort-controls">
+                    <select id="sort-select" onchange="sortProducts()">
+                        <option value="default">Ordenar por...</option>
+                        <option value="asc">Precio: Menor a Mayor</option>
+                        <option value="desc">Precio: Mayor a Menor</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid de productos -->
+        <section class="products">
+            <div id="product-grid" class="grid-container">
+                <!-- Los productos se cargarán aquí dinámicamente con JavaScript -->
+            </div>
+        </section>
+
+        <!-- Sidebar del carrito -->
+        <aside id="cart-sidebar" class="hidden">
+            <div class="cart-header">
+                <h2>Tu Carrito</h2>
+                <button onclick="toggleCart()" class="close-cart"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="cart-items">
+                <!-- Items del carrito -->
+            </div>
+            <div class="cart-summary">
+                <p>Subtotal: $<span id="cart-subtotal">0</span></p>
+                <p>Envío: $<span id="cart-shipping">0</span></p>
+                <h3>Total: $<span id="cart-total">0</span></h3>
+                <button class="btn-checkout" onclick="alert('Funcionalidad de pago en construcción')">Finalizar Compra</button>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>BikePoint</h3>
+                <p>Pasión por el rendimiento y la aventura.</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BikePoint. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Archivo JS principal -->
+    <script src="script.js"></script>
+</body>
+</html>
