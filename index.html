@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BikePoint - Rendimiento y Aventura</title>
-    <meta name="description" content="BikePoint es una tienda de ciclismo moderna enfocada en rendimiento, velocidad y aventura. Diseñada para ciclistas urbanos y de montaña.">
+    <meta name="description"
+        content="BikePoint es una tienda de ciclismo moderna enfocada en rendimiento, velocidad y aventura. Diseñada para ciclistas urbanos y de montaña.">
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts: Montserrat para títulos, Roboto para texto -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <!-- Iconos para UI (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Banner superior -->
     <div class="top-banner">
@@ -21,7 +26,7 @@
     <header>
         <div class="header-container">
             <div class="logo">BikePoint</div>
-            
+
             <!-- Buscador -->
             <div class="search-bar">
                 <input type="text" id="search-input" placeholder="Buscar bicicletas..." onkeyup="searchProducts()">
@@ -98,9 +103,19 @@
                 <p>Subtotal: $<span id="cart-subtotal">0</span></p>
                 <p>Envío: $<span id="cart-shipping">0</span></p>
                 <h3>Total: $<span id="cart-total">0</span></h3>
-                <button class="btn-checkout" onclick="alert('Funcionalidad de pago en construcción')">Finalizar Compra</button>
+                <button class="btn-checkout" onclick="alert('Funcionalidad de pago en construcción')">Finalizar
+                    Compra</button>
             </div>
         </aside>
+
+        <!-- Modal para detalles del producto -->
+        <div id="product-modal" class="modal hidden">
+            <div class="modal-content">
+                <button class="close-modal" onclick="closeProductDetails()"><i class="fa-solid fa-xmark"></i></button>
+                <div id="modal-body">
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Pie de página -->
@@ -125,4 +140,5 @@
     <!-- Archivo JS principal -->
     <script src="script.js"></script>
 </body>
+
 </html>
